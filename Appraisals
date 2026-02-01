@@ -58,6 +58,19 @@ appraise "rails-6-0" do
 end
 
 
+
+appraise "rails-8-0" do
+  gem "rails", "~> 8.0.0"
+  platforms :ruby do
+    gem "sqlite3", ">= 2.1"
+  end
+  platforms :jruby do
+    gem "activerecord-jdbc-adapter", "~> 61.1"
+    gem "activerecord-jdbcpostgresql-adapter", "~> 61.1"
+    gem "activerecord-jdbcmysql-adapter", "~> 61.1"
+  end
+end
+
 appraise "rails-master" do
   gem "rails", git: 'https://github.com/rails/rails.git'
   platforms :ruby do
